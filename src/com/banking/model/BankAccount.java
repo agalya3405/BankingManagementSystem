@@ -1,4 +1,4 @@
-package com.banking.model;
+ package com.banking.model;
 
 public class BankAccount {
 	private String accNo;

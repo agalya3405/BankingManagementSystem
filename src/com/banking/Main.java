@@ -1,6 +1,8 @@
 package com.banking;
 
 import com.banking.model.Customer;
+import com.banking.repository.CustomerRepository;
+
 
 
 import java.util.Scanner;
@@ -9,6 +11,8 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to Bank Management System!!!");
+		
+		CustomerRepository customerRepository = new CustomerRepository();
 		while(true) {
 			System.out.println("Bank Management System!!!");
 			System.out.println("Options are:");
@@ -23,6 +27,7 @@ public class Main {
 			
 			System.out.print("Enter your choice : ");
 			int choice = sc.nextInt();
+			sc.nextLine();
 			
 			switch(choice) {
 			
@@ -42,6 +47,11 @@ public class Main {
 				
 				Customer customer = new Customer(name,mobileNo,email,address);
 				
+				customerRepository.addCustomers(customer);
+				
+				System.out.println("Customer details added sucessfully");
+				
+				break;
 			}
 			
 			
